@@ -1,7 +1,7 @@
 {
   "name": "antd-modal-layer",
   "version": "0.0.1",
-  "description": "A easy way to create a antd modal.",
+  "description": "An easy way to create a antd modal.",
   "author": "ksora",
   "license": "MIT",
   "main": "dist/index.js",
