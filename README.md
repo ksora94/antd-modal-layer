@@ -50,7 +50,7 @@ const App = () => {
 }
 ```
 
-## install
+## Install
 
 ```bash
 npm install antd-modal-layer
@@ -88,7 +88,7 @@ createPropsModal().render({
 });
 ```
 
-### Use ref to control the modal
+### Use ref to handle modal callbacks
 
 ```typescript jsx
 import {useImperativeHandle} from 'react';
@@ -131,9 +131,11 @@ createRefModal().render({
 
 ```typescript jsx
 import createModal from 'antd-modal-layer';
+import {useImperativeHandle} from 'react';
 import {Form, Input} from 'antd';
 
 interface ModalProps {
+  content: string
   onSuccess: () => void,
   onCancel: () => void
 }
@@ -153,6 +155,12 @@ function createFormModal() {
       }
     }))
 
+    useEffect(() => {
+      form.setFieldsValue({
+        content: props.content
+      })
+    }, []);
+
     return (
         <Form form={form}>
           <Form.Item name="content" rules={[{required: true}]}>
@@ -166,6 +174,7 @@ function createFormModal() {
 }
 
 createFormModal().render({
+  content: 'Hello, World!',
   onSuccess() {
     console.log('Success');
   },
