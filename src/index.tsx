@@ -71,7 +71,7 @@ export default function createModal<P>(
         <Modal
             open={visible}
             afterClose={props.layer!.destroy}
-            destroyOnClose={true}
+            destroyOnHidden={true}
             onCancel={handleCancel}
             onOk={handleOk}
             okButtonProps={{loading: okLoading}}
