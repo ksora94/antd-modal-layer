@@ -1,6 +1,11 @@
 # antd-modal-layer
 An easy way to create antd modal. (using [react-simple-layer](https://github.com/ksora94/react-simple-layer))
 
+## Compatibility
+- **antd**: ^5.25.0 or ^6.0.0
+- **react**: ^18.0.0 or ^19.0.0
+- **react-dom**: ^18.0.0 or ^19.0.0
+
 The traditional way to create a modal with antd:
 ```typescript jsx
 import React, {useState} from 'react';
@@ -18,7 +23,7 @@ const App = () => {
         <button onClick={showModal}>Show Modal</button>
         <Modal
             title="Basic Modal"
-            visible={modalShown}
+            open={modalShown}
             onOk={hideModal}
             onCancel={hideModal}
         >
